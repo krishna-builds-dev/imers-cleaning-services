@@ -1,0 +1,102 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: ["./*.html"],
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "on-tertiary-fixed": "#40000a",
+                "surface-container-lowest": "#0e0e0e",
+                "on-background": "#e5e2e1",
+                "secondary-container": "#026741",
+                "on-secondary-container": "#8fe2b3",
+                "on-tertiary-container": "#600114",
+                "tertiary-fixed-dim": "#ffb3b4",
+                "surface": "#131313",
+                "inverse-primary": "#006d40",
+                "inverse-on-surface": "#313030",
+                "on-error-container": "#ffdad6",
+                "on-surface-variant": "#bccabe",
+                "surface-container-high": "#2a2a2a",
+                "on-surface": "#e5e2e1",
+                "primary-fixed-dim": "#5bde97",
+                "on-secondary": "#003822",
+                "on-primary": "#00391f",
+                "on-secondary-fixed-variant": "#005233",
+                "surface-bright": "#393939",
+                "surface-dim": "#131313",
+                "on-error": "#690005",
+                "inverse-surface": "#e5e2e1",
+                "primary": "#5bde97",
+                "tertiary": "#ffb3b4",
+                "surface-container-highest": "#353534",
+                "on-tertiary-fixed-variant": "#85202c",
+                "surface-elevated": "#1E1E1E",
+                "outline-variant": "#3d4a40",
+                "soft-cream": "#F4EFE4",
+                "secondary-fixed": "#a0f4c4",
+                "surface-variant": "#353534",
+                "secondary-fixed-dim": "#85d8a9",
+                "on-primary-container": "#00341c",
+                "on-primary-fixed-variant": "#00522f",
+                "primary-fixed": "#7afbb1",
+                "surface-container-low": "#1c1b1b",
+                "error-container": "#93000a",
+                "tertiary-fixed": "#ffdad9",
+                "secondary": "#85d8a9",
+                "muted-gold": "#B8A477",
+                "on-tertiary": "#660518",
+                "tertiary-container": "#ea6c73",
+                "deep-charcoal": "#181713",
+                "outline": "#869489",
+                "on-secondary-fixed": "#002112",
+                "background": "#131313",
+                "error": "#ffb4ab",
+                "on-primary-fixed": "#002110",
+                "surface-tint": "#5bde97",
+                "primary-container": "#0fa968",
+                "surface-container": "#201f1f"
+            },
+            borderRadius: {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            spacing: {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "base": "8px",
+                "margin-desktop": "64px",
+                "section-gap": "120px"
+            },
+            fontFamily: {
+                "headline-sm": ["Manrope"],
+                "body-md": ["Inter"],
+                "headline-md": ["Manrope"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Manrope"],
+                "display-lg-mobile": ["Manrope"],
+                "label-caps": ["JetBrains Mono"]
+            },
+            fontSize: {
+                "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                "display-lg-mobile": ["30px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "500" }]
+            },
+            screens: {
+                'wide': '1367px'
+            },
+
+        },
+    },
+    plugins: [
+        require("@tailwindcss/forms"),
+        require("@tailwindcss/container-queries"),
+    ],
+}

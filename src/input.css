@@ -1,0 +1,349 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.backdrop-blur-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.transition-stealth {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-gradient {
+    background: linear-gradient(to right, rgba(19, 19, 19, 0.95) 0%, rgba(19, 19, 19, 0.6) 50%, rgba(19, 19, 19, 0.6) 50%);
+}
+
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: #5bde97;
+    width: 0%;
+    z-index: 51;
+    transition: width 0.2s ease;
+}
+
+.btn-primary-hover {
+    transition: opacity 0.25s ease;
+}
+
+.btn-primary-hover:hover {
+    opacity: 0.85;
+}
+
+.btn-outline-hover {
+    transition: all 0.25s ease;
+}
+
+.btn-outline-hover:hover {
+    border-color: #5bde97;
+    color: #5bde97;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+/* Tablet-only fixes for 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Navbar - reduce font sizes and padding */
+    .fixed.top-0 .font-display-lg-mobile,
+    .fixed.top-0 .font-display-lg {
+        font-size: 1.5rem !important;
+        /* 24px */
+    }
+
+    .fixed.top-0 .hidden.md\\:flex a {
+        font-size: 0.875rem !important;
+        /* 14px */
+    }
+
+    .fixed.top-0 .btn-primary-hover {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+
+
+    /* Hero section - reduce height and heading size */
+    .min-h-screen {
+        min-height: 100vh !important;
+    }
+
+    h1.font-display-lg {
+        font-size: 2rem !important;
+        /* 32px */
+        line-height: 1.3 !important;
+    }
+
+    /* Hero buttons - reduce size */
+    .hero-section .btn-primary-hover,
+    section:first-of-type .btn-primary-hover,
+    section:first-of-type a.bg-primary-container {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .hero-section .btn-outline-hover,
+    section:first-of-type .btn-outline-hover {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Hide the arrow icon on tablet (optional but cleans up space) */
+    .hero-section .btn-primary-hover svg,
+    section:first-of-type .btn-primary-hover svg {
+        display: none !important;
+    }
+
+    /* Adjust gap between buttons */
+    .hero-section .flex.flex-wrap.gap-4,
+    section:first-of-type .flex.flex-wrap.gap-4 {
+        gap: 0.75rem !important;
+    }
+
+    .hero-section .font-label-caps {
+        font-size: 0.7rem !important;
+    }
+
+    /* Section gaps - reduce vertical padding */
+    .py-section-gap,
+    [class*="py-section-gap"] {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    /* Reduce service card height on tablet */
+    /* Hide card 2 (Office Cleaning) */
+    #services .grid .md\:col-span-4 {
+        display: none !important;
+    }
+
+    /* Make card 1 (Commercial Cleaning) full width */
+    #services .grid .md\:col-span-8 {
+        grid-column: span 12 / span 12 !important;
+    }
+
+    /* Architectural section – rebalance image vs text */
+    .hidden.md\:grid .relative img {
+        aspect-ratio: 4 / 3 !important;
+        /* taller than 16/9, not as tall as square */
+        max-height: 450px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* Reduce text size and spacing */
+    .hidden.md\:grid h2 {
+        font-size: 1.75rem !important;
+        /* smaller than display-lg */
+        margin-bottom: 1rem !important;
+    }
+
+    .hidden.md\:grid p.font-body-lg {
+        font-size: 0.9375rem !important;
+        /* ~15px */
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hidden.md\:grid .space-y-8 {
+        gap: 1.5rem !important;
+    }
+
+    .hidden.md\:grid .flex.gap-6 {
+        gap: 1rem !important;
+    }
+
+    .hidden.md\:grid .bg-surface-container-high.p-4 {
+        padding: 0.75rem !important;
+    }
+
+    .hidden.md\:grid h3.font-headline-sm {
+        font-size: 1.125rem !important;
+        /* ~18px */
+    }
+
+    .hidden.md\:grid .text-on-surface-variant {
+        font-size: 0.875rem !important;
+        /* ~14px */
+    }
+
+    /* Adjust badge position and size */
+    .hidden.md\:grid .absolute.-bottom-4.-right-4 {
+        bottom: -0.5rem !important;
+        right: -0.5rem !important;
+        padding: 0.5rem 1rem !important;
+        max-width: 150px !important;
+    }
+
+    .hidden.md\:grid .absolute.-bottom-4.-right-4 p {
+        font-size: 0.75rem !important;
+    }
+
+    /* Keep two‑column layout side‑by‑side (more balanced) */
+    .hidden.md\:grid.grid-cols-1.lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+        align-items: center !important;
+    }
+
+    .hidden.md\:grid .space-y-8 {
+        display: none !important;
+    }
+
+    /* About section – constrain image height and reduce text size */
+    #about .relative.rounded-xl img {
+        max-height: 380px !important;
+        /* limits image height */
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    #about h2 {
+        font-size: 1.75rem !important;
+        /* smaller heading */
+        margin-bottom: 1rem !important;
+    }
+
+    #about p.font-body-md.md\:font-body-lg {
+        font-size: 0.9375rem !important;
+        /* ~15px */
+        line-height: 1.5 !important;
+    }
+
+    #about .grid.grid-cols-2.gap-8 {
+        gap: 1.5rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    #about .text-primary.font-display-lg {
+        font-size: 2rem !important;
+        /* 40px → 32px */
+    }
+
+    /* Keep two‑column layout side by side */
+    #about .grid.grid-cols-1.md\:grid-cols-2 {
+        gap: 1.5rem !important;
+    }
+
+    /* Process steps - force 2 columns and adjust spacing */
+    .grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+
+    /* Hide desktop connector lines */
+    .hidden.lg\\:block.absolute {
+        display: none !important;
+    }
+
+    /* Architectural section - reduce badge size */
+    .absolute.-bottom-4.-right-4 {
+        padding: 1rem !important;
+        max-width: 160px !important;
+    }
+
+    .absolute.-bottom-4.-right-4 .font-headline-md {
+        font-size: 1rem !important;
+    }
+
+    /* Portfolio cards - reduce gap */
+    .gap-4.md\\:gap-6.lg\\:gap-10 {
+        gap: 1rem !important;
+    }
+
+    /* Contact form - reduce padding */
+    .bg-surface-container.p-6.md\\:p-12 {
+        padding: 1.5rem !important;
+    }
+
+    /* Contact section – single column layout */
+    #contact .grid.grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* Reset order so contact info appears first, then the form */
+    #contact .order-2.md\:order-1,
+    #contact .order-1.md\:order-2 {
+        order: 0 !important;
+    }
+
+    /* Optional but recommended – reduce padding inside the form card */
+    #contact .bg-surface-container.p-6.md\:p-12 {
+        padding: 1.5rem !important;
+    }
+
+    /* Reduce vertical gap between contact rows */
+    #contact .flex.flex-col.justify-center.space-y-6.md\:space-y-8 {
+        gap: 1.5rem !important;
+    }
+
+    /* Make contact text slightly smaller (optional) */
+    #contact p.font-body-md.md\:font-headline-sm {
+        font-size: 1rem !important;
+    }
+
+    /* Contact info: horizontal layout */
+    #contact .flex.flex-col.justify-center.space-y-6.md\:space-y-8 {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* Remove the top border and unnecessary spacing */
+    #contact .flex.flex-col.justify-center.space-y-6.md\:space-y-8 {
+        border-top: none !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        align-items: center;
+    }
+
+    /* Each contact item – prevent shrinking */
+    #contact .flex.items-center.gap-4.md\:gap-6 {
+        flex: 1 1 auto !important;
+        min-width: 140px !important;
+        margin: 0;
+    }
+
+    /* Hide the large desktop icons (optional, keeps layout clean) */
+    #contact .hidden.md\:flex.w-14.h-14 {
+        display: none !important;
+    }
+
+    /* Ensure the inline SVG icons are visible */
+    #contact .md\:hidden.text-primary {
+        display: inline-flex !important;
+    }
+
+
+
+    /* Footer - reduce logo size */
+    footer .font-headline-sm.md\\:font-display-lg {
+        font-size: 1.75rem !important;
+    }
+}
+
+#turnstile-container {
+    border: none;
+}

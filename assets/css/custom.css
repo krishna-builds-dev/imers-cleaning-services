@@ -1,0 +1,139 @@
+/* 
+ * IMERS - Custom Vanilla CSS
+ * Write standard CSS rules here to override or add styles.
+ * The browser loads this file directly.
+ */
+
+/* Example of overriding standard variables or styles: */
+:root {
+    /* You can adjust your brand colors here if you ever want to change them! */
+    --brand-green-primary: #0fa968;
+    --brand-green-hover: #0c6b45;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* Add any custom vanilla CSS rules here: */
+
+/* Mute dropdown placeholders when unselected (matches invalid state) */
+select:invalid {
+    color: #71717a !important;
+}
+select option {
+    color: #ffffff !important;
+    background-color: #18181b !important;
+}
+
+/* Beautiful dark map filter */
+.map-dark-filter {
+    filter: invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.1);
+}
+
+.iso-badge-shape {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hero-gradient {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cubic-transition {
+    transition: transform 1200ms cubic-bezier(0.85, 0, 0.15, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.preloader-slide-left {
+    transform: translateX(-100%);
+}
+
+.preloader-slide-right {
+    transform: translateX(100%);
+}
+
+@keyframes loader-progress {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-loader-bar {
+    animation: loader-progress 1.6s infinite ease-in-out;
+}
+
+/* Dual-Ring Spinner Keyframe Animations */
+@keyframes spin-clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-counter-clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-clockwise 2.2s cubic-bezier(0.5, 0.1, 0.3, 0.9) infinite;
+}
+
+.animate-spin-reverse {
+    animation: spin-counter-clockwise 1.3s cubic-bezier(0.5, 0.1, 0.3, 0.9) infinite;
+}
